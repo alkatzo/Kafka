@@ -1,0 +1,4 @@
+rootProject.name = 'Kafka'
+include 'people-service-basic'
+include 'people-service-basic-producer-alt'
+
