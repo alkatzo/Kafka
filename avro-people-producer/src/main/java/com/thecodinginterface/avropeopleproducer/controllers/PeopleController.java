@@ -37,13 +37,14 @@ public class PeopleController {
 
         for (var i = 0; i < cmd.getCount(); i++) {
             var person = new Person();
-            person.setName(faker.name().fullName());
+            person.setFirstName(faker.name().firstName());
+            person.setLastName(faker.name().lastName());
             person.setTitle(faker.job().title());
-            people.add(new PersonDto(person.getName(), person.getTitle()));
+            people.add(new PersonDto(person.getFirstName(), person.getLastName(), person.getTitle()));
 
             var future = kafkaTemplate.send(
                     personAvroTopic,
-                    person.getName().toLowerCase().replaceAll("\\s+", "-"),
+                    person.getFirstName().toLowerCase().replaceAll("\\s+", "-"),
                     person
             );
 

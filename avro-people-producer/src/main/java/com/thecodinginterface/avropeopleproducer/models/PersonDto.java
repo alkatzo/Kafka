@@ -10,6 +10,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class PersonDto {
-    private String name;
+    private String firstName;
+    private String lastName;
     private String title;
 }

@@ -4,8 +4,14 @@
   "type": "record",
   "fields": [
     {
-      "name": "name",
-      "type": "string"
+      "name": "firstName",
+      "type": ["null","string"],
+      "default": null
+    },
+    {
+      "name": "lastName",
+      "type": ["null","string"],
+      "default": null
     },
     {
       "name": "title",
