@@ -18,7 +18,7 @@ import java.util.Map;
 public class PeopleConsumerConfig {
 
     @Value("${spring.kafka.bootstrap-servers}")
-    String boostrapServers;
+    String bootstrapServers;
 
     @Value("${spring.kafka.consumer.properties.schema.registry.url}")
     String schemaRegUrl;
@@ -29,7 +29,7 @@ public class PeopleConsumerConfig {
     // configs map
     public Map<String, Object> consumerConfigs() {
         return Map.of(
-                ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, boostrapServers,
+                ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers,
                 ConsumerConfig.GROUP_ID_CONFIG, consumerGroup,
                 ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, org.apache.kafka.common.serialization.StringDeserializer.class,
                 ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, io.confluent.kafka.serializers.KafkaAvroDeserializer.class,

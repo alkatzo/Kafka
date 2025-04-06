@@ -14,8 +14,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/../avro-people-consumer" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../Tools/gradle-8.5" />
+        <option name="gradleJvm" value="corretto-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/../avro-people-consumer" />
@@ -23,8 +25,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/../avro-people-producer" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../Tools/gradle-8.5" />
+        <option name="gradleJvm" value="corretto-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/../avro-people-producer" />

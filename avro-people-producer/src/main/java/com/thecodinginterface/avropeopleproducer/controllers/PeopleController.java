@@ -46,9 +46,16 @@ public class PeopleController {
                     person.getName().toLowerCase().replaceAll("\\s+", "-"),
                     person
             );
+
             future.addCallback(
-                    result -> { logger.info("Produced {}", person); },
-                    ex -> { logger.error("Failed to produce " + person, ex); }
+                    result -> {
+                        logger.info("Published person=" + person
+                                + ",\n  partition=" + result.getRecordMetadata().partition()
+                                + ",\n offset=" + result.getRecordMetadata().offset());
+                    },
+                    ex -> {
+                        logger.error("Failed to publish " + person, ex);
+                    }
             );
         }
         kafkaTemplate.flush();
